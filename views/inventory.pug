@@ -1,0 +1,14 @@
+doctype html
+html
+	head
+		title pug exercise
+		include stylesheets.pug
+
+
+	body
+		include nav.pug
+
+		each val in inventory
+			p #{val.one}: :$#{val.price}
+
+		block content

@@ -8,7 +8,24 @@ app.use(express.static('public'));
 app.set('view engine', 'pug');
 
 
-
+const pastries = [
+	{
+		one: 'uno',
+		price: 12.34
+	},
+	{
+		one: 'dos'
+	},
+	{
+		one: 'tres'
+	},
+	{
+		one: 'quatro'
+	},
+	{
+		one: 'cinco'
+	}
+];
 
 
 
@@ -21,7 +38,7 @@ app.get('/about', (req, res, next) => {
 	res.render('about')
 });
 app.get('/inventory', (req, res, next) => {
-	res.render('inventory')
+	res.render('inventory', {inventory: pastries})
 });
 
 
